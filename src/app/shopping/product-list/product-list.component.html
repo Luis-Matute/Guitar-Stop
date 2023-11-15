@@ -1,1 +1,7 @@
-<p>product-list works!</p>
+<h1>Our Products</h1>
+
+<div>
+    <ul *ngFor="let guitar of products">
+        <a href="/details/{{guitar.id}}">{{guitar.brand}}</a>
+    </ul>
+</div>
