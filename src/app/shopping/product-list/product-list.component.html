@@ -2,6 +2,6 @@
 
 <div>
     <ul *ngFor="let guitar of products">
-        <span>{{guitar.brand}}</span>
+        <a href="/details/{{guitar.id}}">{{guitar.brand}}</a>
     </ul>
 </div>
