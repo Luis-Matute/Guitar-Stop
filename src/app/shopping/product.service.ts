@@ -20,5 +20,5 @@ export class ProductService {
   getProduct(id: string): Observable<Guitar> {
     return this.httpClient.get<Guitar>(this.apiUrl + "/inventory/" + id);
   }
-
+  
 }

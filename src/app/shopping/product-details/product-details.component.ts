@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Guitar } from 'src/app/models/guitar';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-product-details',
@@ -32,5 +33,4 @@ export class ProductDetailsComponent {
       complete: () => console.log('Complete')
     });
   }
-
 }
