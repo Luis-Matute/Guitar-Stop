@@ -1,1 +1,7 @@
 <p>cart works!</p>
+
+<div *ngFor="let item of cart.items">
+    <span>{{item.brand}}</span>
+</div>
+
+<button (click)="clearCart()">Empty Cart</button>
