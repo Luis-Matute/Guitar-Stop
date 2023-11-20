@@ -13,7 +13,6 @@ import { Specification } from 'src/app/models/specification';
 export class ProductDetailsComponent {
 
   product: Guitar = {} as Guitar;
-  specifications: Specification = {} as Specification;
 
   constructor(private productService: ProductService, private router: Router) { }
 
@@ -24,7 +23,6 @@ export class ProductDetailsComponent {
         console.log("Response:");
         console.log(result);
         this.product = result;
-        this.specifications = this.product.specification;
         console.log("Product:")
         console.log(this.product);
       },
