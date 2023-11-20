@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Cart } from '../models/cart';
+import { Guitar } from '../models/guitar';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +20,10 @@ export class CartService {
 
   clearCart(cartId: string): Observable<Cart> {
     return this.http.delete<Cart>(`${this.apiUrl}/clearCart/${cartId}`);
+  }
+
+  addToCart(product: Guitar): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/addToCart`, product);
   }
 
 

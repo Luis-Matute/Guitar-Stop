@@ -1,0 +1,9 @@
+.details-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.details-container > * {
+    justify-content: space-around;
+    margin: 25px;
+}

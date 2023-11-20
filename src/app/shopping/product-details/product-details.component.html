@@ -1,5 +1,38 @@
-<p>product-details works!</p>
+<div class="details-container">
+    <img src="{{product.imageUrl}}">
+    <div>
+        <h1>{{product.brand}} {{product.name}}</h1>
+        <span>${{product.price}}</span>
+    </div> 
+</div>
 
 <div>
-    <h1>{{product.brand}}</h1>
+    <mat-tab-group dynamicHeight>
+        <mat-tab label="Specifications">
+            <span>Specs:</span>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>Color:</span>
+                    <span matListItemLine>{{specifications.color}}</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-tab>
+        <mat-tab label="About">
+            <span>About the product</span>
+            <mat-list>
+                <mat-list-item>
+                    <span matListItemTitle>Brand:</span>
+                    <span matListItemLine>{{product.brand}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Condition:</span>
+                    <span matListItemLine>{{product.condition}}</span>
+                </mat-list-item>
+                <mat-list-item>
+                    <span matListItemTitle>Type:</span>
+                    <span matListItemLine>{{product.type}}</span>
+                </mat-list-item>
+            </mat-list>
+        </mat-tab>
+    </mat-tab-group>
 </div>
