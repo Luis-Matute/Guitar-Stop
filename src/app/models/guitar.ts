@@ -8,5 +8,5 @@ export interface Guitar {
     price: number,
     imageUrl: string,
     name: string,
-    specs: Specification
+    specification: Specification
 }

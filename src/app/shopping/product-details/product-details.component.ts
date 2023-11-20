@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Guitar } from 'src/app/models/guitar';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Specification } from 'src/app/models/specification';
 
 @Component({
   selector: 'app-product-details',
@@ -22,6 +23,8 @@ export class ProductDetailsComponent {
         console.log("Response:");
         console.log(result);
         this.product = result;
+        console.log("Product:")
+        console.log(this.product);
       },
       error: (e: HttpErrorResponse) => {
         console.log(e.error.message);
