@@ -1,7 +1,7 @@
 <div class="container"> 
     <h2>Our Products</h2>
     <div fxLayout="row wrap" fxLayoutGap="50px grid">
-        <div *ngFor="let guitar of products">
+        <div *ngFor="let guitar of filteredProducts">
             <mat-card (click)="productDetails(guitar.id)">
                 <mat-card-header>
                     <mat-card-title>{{guitar.brand}} {{guitar.name}}</mat-card-title>
@@ -13,7 +13,7 @@
                 </mat-card-actions> -->
             </mat-card>
         </div>
-        <div *ngFor="let guitar of products">
+        <!-- <div *ngFor="let guitar of products">
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>{{guitar.brand}} {{guitar.name}}</mat-card-title>
@@ -24,6 +24,23 @@
                     <button mat-button (click)="addToCart(guitar)">Add to cart</button>
                 </mat-card-actions>
             </mat-card>
-        </div>
+        </div> -->
     </div>
 </div>
+
+<section>
+    <span>
+        <mat-form-field>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search...">
+        </mat-form-field>
+        <h2>Filter:</h2>
+        <h3>Brand:</h3>
+        <ul>
+            <li *ngFor="let brand of brands">
+                <mat-checkbox (change)="something($event.checked, brand)">
+                    {{brand}}
+                </mat-checkbox>
+            </li>
+        </ul>
+    </span>
+</section>
