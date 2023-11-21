@@ -6,8 +6,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatListModule} from '@angular/material/list';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
@@ -23,7 +26,9 @@ import {MatListModule} from '@angular/material/list';
     MatCheckboxModule,
     FlexLayoutModule,
     MatTabsModule,
-    MatListModule
+    MatListModule,
+    FormsModule,
+    MatInputModule
   ]
 })
 export class ShoppingModule { }
