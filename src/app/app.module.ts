@@ -9,6 +9,11 @@ import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
+
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
@@ -34,9 +39,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CommonModule,
     ShoppingModule,
     CheckoutModule,
-    CartModule
+    CartModule,
+    FlexLayoutModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
