@@ -2,7 +2,8 @@
     <img src="{{product.imageUrl}}">
     <div>
         <h1>{{product.brand}} {{product.name}}</h1>
-        <span>${{product.price}}</span>
+        <span>{{product.price | currency: 'USD'}}</span>
+        <button (click)="addToCart()">Add to cart</button>
     </div> 
 </div>
 
