@@ -22,8 +22,8 @@ export class CartService {
     return this.http.delete<Cart>(`${this.apiUrl}/clearCart/${cartId}`);
   }
 
-  addToCart(product: Guitar): Observable<void> {
-    return this.http.post<void>(`${this.apiUrl}/addToCart`, product);
+  addToCart(product: Guitar): Observable<Cart> {
+    return this.http.post<Cart>(`${this.apiUrl}/addToCart`, product);
   }
 
 

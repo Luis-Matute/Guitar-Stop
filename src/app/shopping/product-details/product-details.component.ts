@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Guitar } from 'src/app/models/guitar';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Specification } from 'src/app/models/specification';
+import { CartService } from 'src/app/cart/cart.service';
+import { Cart } from 'src/app/models/cart';
+
 
 @Component({
   selector: 'app-product-details',
@@ -14,7 +16,7 @@ export class ProductDetailsComponent {
 
   product: Guitar = {} as Guitar;
 
-  constructor(private productService: ProductService, private router: Router) { }
+  constructor(private productService: ProductService, private router: Router, private cartService: CartService) { }
 
   @Input()
   set id(id: string) {
@@ -32,7 +34,23 @@ export class ProductDetailsComponent {
         console.log(e.status);
         this.router.navigate(['**']);
       },
-      complete: () => console.log('Complete')
+      complete: () => console.log('Completed obtaining product.')
     });
   }
+
+  addToCart(): void {
+    console.log("You hit the add cart method!");
+    this.cartService.addToCart(this.product).subscribe({
+      next: (result: Cart) => {
+        console.log(result);
+      },
+      error: (err: HttpErrorResponse) => {
+        console.log(err);
+      },
+      complete: () => {
+        console.log("Completed adding to cart!")
+      }
+    });
+  }
+
 }
