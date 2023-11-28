@@ -5,6 +5,7 @@ import { Guitar } from 'src/app/models/guitar';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Specification } from 'src/app/models/specification';
 
+
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
