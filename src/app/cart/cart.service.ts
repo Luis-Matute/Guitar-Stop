@@ -25,6 +25,4 @@ export class CartService {
   addToCart(product: Guitar): Observable<Cart> {
     return this.http.post<Cart>(`${this.apiUrl}/addToCart`, product);
   }
-
-
 }

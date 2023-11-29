@@ -7,7 +7,6 @@ import { CartService } from 'src/app/cart/cart.service';
 import { Cart } from 'src/app/models/cart';
 
 
-
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
