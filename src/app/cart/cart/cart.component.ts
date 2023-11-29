@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
     this.cartService.getCart("1").subscribe({
       next: (result) => {
         console.log("Success");
+        console.log(result);
         this.cart = result;
       },
       error: (e: HttpErrorResponse) => {
@@ -34,8 +35,15 @@ export class CartComponent implements OnInit {
       },
       error: (err: HttpErrorResponse) => {
         console.error(err);
+      },
+      complete: () => {
+        console.log("Completed clearing cart.")
       }
     });
+  }
+
+  removeItemFromCart(index: number) {
+    this.cart.items.splice(index, 1);
   }
 
 }
