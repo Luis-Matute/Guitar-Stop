@@ -1,1 +1,55 @@
-<p>checkout works!</p>
+<form [formGroup]="checkoutForm" (ngSubmit)="onFormSubmit()">
+    <div class="row section">
+        <h2>Your Information:</h2>
+        <div class="col">
+            <label class="form-label">First Name:</label>
+            <input class="form-control" placeholder="First Name..." type="text" formControlName="firstName">
+        </div>
+        <div class="col">
+            <label class="form-label">Last Name:</label>
+            <input class="form-control" placeholder="Last Name..." type="text" formControlName="lastName">
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+
+    <div class="row section">
+        <h2>Delivery Address</h2>
+        <div class="col">
+            <label class="form-label">Street Address:</label>
+            <input class="form-control" placeholder="Street address" type="text" formControlName="streetAddress">
+        </div>
+        <div class="col">
+            <label class="form-label">City:</label>
+            <input class="form-control" placeholder="City" type="text" formControlName="city">
+        </div>
+        <div class="col">
+            <label class="form-label">State:</label>
+            <select class="form-control" formControlName="state">
+                <option value="CA">CA</option>
+                <option value="FL">FL</option>
+                <option value="NY">NY</option>
+            </select>
+        </div>
+        <div class="col">
+            <label class="form-label">Zip Code:</label>
+            <input class="form-control" placeholder="Zip Code..." type="text" formControlName="zipCode">
+        </div>
+    </div>
+
+    <mat-divider></mat-divider>
+    <div class="row section">
+        <h2>Contact Information</h2>
+        <div class="col">
+            <label class="form-label">Email:</label>
+            <input class="form-control" placeholder="Email..." type="email" formControlName="email">
+        </div>
+        <div class="col">
+            <label class="form-label">Phone Number:</label>
+            <input class="form-control" placeholder="Phone Number..." type="text" formControlName="phoneNumber">
+        </div>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>

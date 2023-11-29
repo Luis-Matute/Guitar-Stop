@@ -1,7 +1,14 @@
-<p>cart works!</p>
-
-<div *ngFor="let item of cart.items">
-    <span>{{item.brand}}</span>
+<div *ngFor="let item of cart.items; index as i">
+    <img src="{{item.imageUrl}}" height="50" width="50">
+    <span>{{item.brand}} {{item.name}}</span>
+    <h5>{{item.price}}</h5>
+    <h5>Condition: {{item.condition}}</h5>
+    <button (click)="removeItemFromCart(i)">Remove</button>
 </div>
 
+
 <button (click)="clearCart()">Empty Cart</button>
+
+<div>
+    <button><a href="/checkout">Checkout</a></button>
+</div>
