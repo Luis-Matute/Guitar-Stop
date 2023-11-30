@@ -21,6 +21,10 @@ export class ProductListComponent implements OnInit{
   filteredBrands: string[] = [];
   brands: string[] = [];
   form: FormGroup;
+  minPrice: number = 399;
+  maxPrice: number = 2099;
+  filteredMinPrice: number = 0;
+  filteredMaxPrice: number = 0;
 
   constructor(private productService: ProductService,
     private cartService: CartService,
@@ -48,6 +52,7 @@ export class ProductListComponent implements OnInit{
       },
       complete: () => {
         this.brands = [...new Set(this.products.map(guitar => guitar.brand))];
+        this.setMinimumAndMaxPrice(this.products);
       }
     });
   }
@@ -82,7 +87,7 @@ export class ProductListComponent implements OnInit{
   }
 
   filterProducts() {
-    this.filteredProducts = this.products.filter(product => this.filteredBrands.length == 0 ? this.products : this.filteredBrands.includes(product.brand));
+    this.filteredProducts = this.products.filter(product => (this.filteredBrands.length == 0 ? this.products : this.filteredBrands.includes(product.brand)) );
   }
 
   applyFilter(event: Event): void {
@@ -99,6 +104,31 @@ export class ProductListComponent implements OnInit{
 
   get ordersFormArray() {
     return this.form.controls['brands'] as FormArray;
+  }
+
+  setMinimumAndMaxPrice(products: Guitar[]) {
+    let minValue = Infinity;
+    let maxValue = -Infinity;
+    
+    for (let item of products) {
+        // Find minimum value
+        if (item.price < minValue)
+          minValue = item.price;
+
+        // Find maximum value
+        if (item.price > maxValue)
+          maxValue = item.price;
+    }
+
+    this.minPrice = Math.floor(minValue);
+    this.maxPrice = Math.fround(maxValue);
+    console.log(this.minPrice);
+    console.log(this.maxPrice);
+    
+  }
+
+  filterPrice() {
+    this.filteredProducts = this.products.filter(product => product.price >= this.filteredMinPrice && product.price <= this.filteredMaxPrice);
   }
 
 }

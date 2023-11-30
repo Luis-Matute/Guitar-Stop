@@ -13,6 +13,11 @@
                     </mat-checkbox>
                 </li>
             </ul>
+            <h3>Price</h3>
+            <mat-slider [min]="minPrice" [max]="maxPrice" showTickMarks discrete step="1">
+                <input [value]="minPrice" [(ngModel)]="filteredMinPrice" (dragEnd)="filterPrice()" matSliderStartThumb>
+                <input [value]="maxPrice" [(ngModel)]="filteredMaxPrice" (dragEnd)="filterPrice()" matSliderEndThumb>
+            </mat-slider>
         </div>
         <div class="p-2 w-600">
             <h2>Our Products</h2>
