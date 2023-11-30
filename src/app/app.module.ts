@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -41,7 +43,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CheckoutModule,
     CartModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule
   ],
   providers: [
 
