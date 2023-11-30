@@ -10,6 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -28,7 +29,8 @@ import {MatInputModule} from '@angular/material/input';
     MatTabsModule,
     MatListModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatSliderModule
   ]
 })
 export class ShoppingModule { }
