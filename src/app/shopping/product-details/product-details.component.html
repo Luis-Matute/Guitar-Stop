@@ -1,9 +1,16 @@
 <div class="details-container">
-    <img src="{{product.imageUrl}}">
+    <img src="{{product.imageUrl}}" height="750px" width="550px">
     <div>
         <h1>{{product.brand}} {{product.name}}</h1>
         <span>{{product.price | currency: 'USD'}}</span>
-        <button (click)="addToCart()">Add to cart</button>
+        <br>
+        <div *ngIf="isInCart; then removeBlock else addBlock"></div>
+        <ng-template #addBlock>
+            <button type="button" (click)="addToCart()" class="btn btn-dark">Add to cart</button>
+        </ng-template>
+        <ng-template #removeBlock>
+            <button type="button" (click)="removeFromCart()" class="btn btn-danger">Remove from cart</button>
+        </ng-template>
     </div> 
 </div>
 

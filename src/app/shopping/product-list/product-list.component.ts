@@ -59,14 +59,16 @@ export class ProductListComponent implements OnInit{
 
   addToCart(product: Guitar) {
     console.log("Added to cart");
-    this.cartService.addToCart(product).subscribe({
-      next: (result) => {
-        console.log(result);
-      },
-      error: (err: HttpErrorResponse) => {
-        console.log(err);
-      }
-    });
+    this.cartService.addToCart(product);
+    
+    // .subscribe({
+    //   next: (result) => {
+    //     console.log(result);
+    //   },
+    //   error: (err: HttpErrorResponse) => {
+    //     console.log(err);
+    //   }
+    // });
   }
 
   productDetails(productId: string): void {
@@ -129,6 +131,10 @@ export class ProductListComponent implements OnInit{
 
   filterPrice() {
     this.filteredProducts = this.products.filter(product => product.price >= this.filteredMinPrice && product.price <= this.filteredMaxPrice);
+  }
+
+  formatLabel(value: number): string {
+    return `$${value}`;
   }
 
 }

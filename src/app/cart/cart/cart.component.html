@@ -1,14 +1,21 @@
-<div *ngFor="let item of cart.items; index as i">
-    <img src="{{item.imageUrl}}" height="50" width="50">
-    <span>{{item.brand}} {{item.name}}</span>
-    <h5>{{item.price}}</h5>
-    <h5>Condition: {{item.condition}}</h5>
-    <button (click)="removeItemFromCart(i)">Remove</button>
-</div>
+<div class="container">
+    <div *ngFor="let item of cart.items; index as i">
+        <span class="d-block p-2">
+            <img src="{{item.imageUrl}}" class="img-fluid img-thumbnail" height="50px" width="50px">
+            <div class="d-inline p-2">
+                <span class="d-block p-2">{{item.brand}} {{item.name}}</span>
+                <span class="d-block p-2">{{item.price | currency: 'USD'}}</span>
+                <h5 class="d-block p-2">Condition: {{item.condition}}</h5>
+                <button (click)="removeItemFromCart(i)" class="btn btn-danger">Remove</button>
+            </div>
+        </span>
+    </div>
+    
+    
+    <button (click)="clearCart()" class="btn btn-danger">Empty Cart</button>
+    
+    <div class="my-5">
+        <button><a href="/checkout">Checkout</a></button>
+    </div>
 
-
-<button (click)="clearCart()">Empty Cart</button>
-
-<div>
-    <button><a href="/checkout">Checkout</a></button>
 </div>

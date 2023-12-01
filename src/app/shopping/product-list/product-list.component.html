@@ -14,7 +14,7 @@
                 </li>
             </ul>
             <h3>Price</h3>
-            <mat-slider [min]="minPrice" [max]="maxPrice" showTickMarks discrete step="1">
+            <mat-slider [min]="minPrice" [max]="maxPrice" showTickMarks discrete step="1" [displayWith]="formatLabel">
                 <input [value]="minPrice" [(ngModel)]="filteredMinPrice" (dragEnd)="filterPrice()" matSliderStartThumb>
                 <input [value]="maxPrice" [(ngModel)]="filteredMaxPrice" (dragEnd)="filterPrice()" matSliderEndThumb>
             </mat-slider>

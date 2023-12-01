@@ -11,6 +11,8 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
 
 
 
@@ -30,7 +32,8 @@ import {MatSliderModule} from '@angular/material/slider';
     MatListModule,
     FormsModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    MatSnackBarModule
   ]
 })
 export class ShoppingModule { }

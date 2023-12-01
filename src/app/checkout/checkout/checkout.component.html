@@ -4,10 +4,14 @@
         <div class="col">
             <label class="form-label">First Name:</label>
             <input class="form-control" placeholder="First Name..." type="text" formControlName="firstName">
+            <small class="text-danger" *ngIf="checkoutForm.get('firstName')?.invalid && 
+                checkoutForm.get('firstName')?.touched">First name is required!</small>
         </div>
         <div class="col">
             <label class="form-label">Last Name:</label>
             <input class="form-control" placeholder="Last Name..." type="text" formControlName="lastName">
+            <small class="text-danger" *ngIf="checkoutForm.get('lastName')?.invalid && 
+                checkoutForm.get('lastName')?.touched">Last name is required!</small>
         </div>
     </div>
 
@@ -19,10 +23,14 @@
         <div class="col">
             <label class="form-label">Street Address:</label>
             <input class="form-control" placeholder="Street address" type="text" formControlName="streetAddress">
+            <small class="text-danger" *ngIf="checkoutForm.get('address.streetAddress')?.invalid && 
+                checkoutForm.get('address.streetAddress')?.touched">Address is required!</small>
         </div>
         <div class="col">
             <label class="form-label">City:</label>
             <input class="form-control" placeholder="City" type="text" formControlName="city">
+            <small class="text-danger" *ngIf="checkoutForm.get('address.city')?.invalid && 
+                checkoutForm.get('address.city')?.touched">City is required!</small>
         </div>
         <div class="col">
             <label class="form-label">State:</label>
@@ -31,10 +39,14 @@
                 <option value="FL">FL</option>
                 <option value="NY">NY</option>
             </select>
+            <small class="text-danger" *ngIf="checkoutForm.get('address.state')?.invalid && 
+                checkoutForm.get('address.state')?.touched">State is required!</small>
         </div>
         <div class="col">
             <label class="form-label">Zip Code:</label>
             <input class="form-control" placeholder="Zip Code..." type="text" formControlName="zipCode">
+            <small class="text-danger" *ngIf="checkoutForm.get('address.zipCode')?.invalid && 
+                checkoutForm.get('address.zipCode')?.touched">Zip code is required!</small>
         </div>
     </div>
 
@@ -43,13 +55,17 @@
         <h2>Contact Information</h2>
         <div class="col">
             <label class="form-label">Email:</label>
-            <input class="form-control" placeholder="Email..." type="email" formControlName="email">
+            <input class="form-control" placeholder="test@example.com" type="email" formControlName="email">
+            <small class="text-danger" *ngIf="checkoutForm.get('email')?.invalid && 
+                checkoutForm.get('email')?.touched">Email is required!</small>
         </div>
         <div class="col">
             <label class="form-label">Phone Number:</label>
             <input class="form-control" placeholder="Phone Number..." type="text" formControlName="phoneNumber">
+            <small class="text-danger" *ngIf="checkoutForm.get('phoneNumber')?.invalid && 
+                checkoutForm.get('phoneNumber')?.touched">Phone number is required!</small>
         </div>
     </div>
 
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>

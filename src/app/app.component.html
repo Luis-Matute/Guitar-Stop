@@ -1,13 +1,26 @@
-<mat-toolbar>
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Guitar Stop</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/shop">Shop</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/cart">Cart</a>
+                </li>
+                </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- <mat-toolbar>
     <mat-toolbar-row>
         <a href="/">Guitar Stop</a>
         <a class="example-spacer" href="/shop" mat-button>Shop</a>
         <a class="example-spacer" href='/cart' mat-button>Cart</a>
     </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
 
 <router-outlet></router-outlet>
-
-<footer>
-    <h2>About</h2>
-</footer>

@@ -36,20 +36,22 @@ export class CheckoutComponent implements OnInit{
     
     
     let userId = "1";
-    this.cartService.getCart(userId).subscribe({
-      next: (result) => {
-        console.log("Result");
-        console.log(result);
-        this.cart = result;
-      },
-      error: (err: HttpErrorResponse) => {
-        console.log("Error while obtaining cart");
-        console.log(err);
-      },
-      complete: () => {
-        console.log("Completed obtaining cart.");
-      }
-    });
+    this.cart = this.cartService.getCart(userId);
+    
+    // .subscribe({
+    //   next: (result) => {
+    //     console.log("Result");
+    //     console.log(result);
+    //     this.cart = result;
+    //   },
+    //   error: (err: HttpErrorResponse) => {
+    //     console.log("Error while obtaining cart");
+    //     console.log(err);
+    //   },
+    //   complete: () => {
+    //     console.log("Completed obtaining cart.");
+    //   }
+    // });
   }
 
   onFormSubmit() {

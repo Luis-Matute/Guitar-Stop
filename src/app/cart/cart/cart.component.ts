@@ -15,35 +15,42 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.getCart("1").subscribe({
-      next: (result) => {
-        console.log("Success");
-        console.log(result);
-        this.cart = result;
-      },
-      error: (e: HttpErrorResponse) => {
-        console.error(e.error);
-      }
-    })
+    this.cart = this.cartService.getCart("1");
+    // .subscribe({
+    //   next: (result) => {
+    //     console.log("Success");
+    //     console.log(result);
+    //     this.cart = result;
+    //   },
+    //   error: (e: HttpErrorResponse) => {
+    //     console.error(e.error);
+    //   }
+    // })
   }
 
   clearCart() {
     let userId = "1";
-    this.cartService.clearCart(userId).subscribe({
-      next: (result) => {
-        this.cart = result;
-      },
-      error: (err: HttpErrorResponse) => {
-        console.error(err);
-      },
-      complete: () => {
-        console.log("Completed clearing cart.")
-      }
-    });
+    this.cart = this.cartService.clearCart(userId)
+    // .subscribe({
+    //   next: (result) => {
+    //     this.cart = result;
+    //   },
+    //   error: (err: HttpErrorResponse) => {
+    //     console.error(err);
+    //   },
+    //   complete: () => {
+    //     console.log("Completed clearing cart.")
+    //   }
+    // });
   }
 
   removeItemFromCart(index: number) {
-    this.cart.items.splice(index, 1);
+    let item = this.cart.items.at(index);
+
+    if (item) {
+      this.cart = this.cartService.removeFromCart(item);
+    }
+    
   }
 
 }
