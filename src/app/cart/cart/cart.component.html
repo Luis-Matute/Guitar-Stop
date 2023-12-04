@@ -1,5 +1,18 @@
-<div class="container">
-    <div *ngFor="let item of cart.items; index as i">
+<div class="container" *ngIf="cart.items.length; else emptyCart">
+    <div class="d-flex flex-column mb-3 my-5" *ngFor="let item of cart.items; index as i">
+        <div class="d-inline-flex p-2 mx-4">
+            <img src="{{item.imageUrl}}" class="img-fluid img-thumbnail" height="50px" width="50px">
+            <div class="">
+                <span class="">{{item.brand}} {{item.name}}</span>
+                <h5 class="">{{item.price | currency: 'USD'}}</h5>
+                <h5 class="">Condition: {{item.condition}}</h5>
+                <button (click)="removeItemFromCart(i)" class="btn btn-danger">Remove</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div *ngFor="let item of cart.items; index as i">
         <span class="d-block p-2">
             <img src="{{item.imageUrl}}" class="img-fluid img-thumbnail" height="50px" width="50px">
             <div class="d-inline p-2">
@@ -9,13 +22,20 @@
                 <button (click)="removeItemFromCart(i)" class="btn btn-danger">Remove</button>
             </div>
         </span>
+    </div> -->
+    
+    <div>
+        <button (click)="clearCart()" class="btn btn-danger">Empty Cart</button>
     </div>
-    
-    
-    <button (click)="clearCart()" class="btn btn-danger">Empty Cart</button>
+
     
     <div class="my-5">
-        <button><a href="/checkout">Checkout</a></button>
+        <button type="button" class="btn btn-primary"><a class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/checkout">Checkout</a></button>
     </div>
 
 </div>
+
+<ng-template #emptyCart>
+    <h1>Your cart's knob is turned to zero!</h1>
+    <h2>Consider looking into <a href="/shop">our products</a></h2>
+</ng-template>

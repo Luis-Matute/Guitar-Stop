@@ -40,6 +40,7 @@ export class CartService {
     this.saveCartToLocalStorage(cart);
     console.log("Cart:");
     console.log(cart);
+
     return cart;
     // return this.http.post<Cart>(`${this.apiUrl}/addToCart`, product);
   }

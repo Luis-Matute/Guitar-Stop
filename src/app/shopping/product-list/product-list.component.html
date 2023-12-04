@@ -25,7 +25,7 @@
                 <div *ngFor="let guitar of filteredProducts">
                     <mat-card (click)="productDetails(guitar.id)">
                         <mat-card-header>
-                            <mat-card-title>{{guitar.brand}} {{guitar.name}}</mat-card-title>
+                            <mat-card-title class="text-white">{{guitar.brand}} {{guitar.name}}</mat-card-title>
                             <mat-card-subtitle>{{guitar.price | currency: 'USD'}}</mat-card-subtitle>
                         </mat-card-header>
                         <img mat-card-image src="{{guitar.imageUrl}}" width="350" height="500">
