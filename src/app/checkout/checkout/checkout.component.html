@@ -67,5 +67,22 @@
         </div>
     </div>
 
+    <mat-divider></mat-divider>
+    <div class="row section">
+        <h2>Payment Information</h2>
+        <div class="col">
+            <label class="form-label">Card Number:</label>
+            <input class="form-control" placeholder="1111-1111-1111-1111" type="text" formControlName="cardNumber">
+            <small class="text-danger" *ngIf="checkoutForm.get('cardNumber')?.invalid && 
+                checkoutForm.get('cardNumber')?.touched">Card number is required!</small>
+        </div>
+        <div class="col">
+            <label class="form-label">Expiration Date:</label>
+            <input class="form-control" placeholder="00/00" type="text" formControlName="expirationDate">
+            <small class="text-danger" *ngIf="checkoutForm.get('expirationDate')?.invalid && 
+                checkoutForm.get('expirationDate')?.touched">expiration date is required!</small>
+        </div>
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

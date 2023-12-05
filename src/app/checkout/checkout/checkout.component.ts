@@ -31,7 +31,9 @@ export class CheckoutComponent implements OnInit{
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', Validators.required]
+      phoneNumber: ['', Validators.required],
+      cardNumber: ['', Validators.required],
+      expirationDate: ['', Validators.required]
     });
     
     
