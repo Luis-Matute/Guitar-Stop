@@ -12,6 +12,7 @@ COPY --chown=1001:1001 package.json package-lock.json ./
 RUN npm install --production=false
 
 
+
 # Add application files in container 
 COPY . .
 
