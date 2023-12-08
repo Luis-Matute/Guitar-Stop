@@ -18,10 +18,16 @@ export class CheckoutComponent implements OnInit{
 
   ngOnInit(): void {
     this.checkoutForm = this.formBuilder.group({
-      streetAddress: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      zipCode: ['', Validators.required],
+      address: this.formBuilder.group({
+        streetAddress: ['', Validators.required],
+        city: ['', Validators.required],
+        state: ['', Validators.required],
+        zipCode: ['', Validators.required],
+      }),
+      // streetAddress: ['', Validators.required],
+      // city: ['', Validators.required],
+      // state: ['', Validators.required],
+      // zipCode: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
