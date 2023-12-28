@@ -1,14 +1,15 @@
-FROM nginx:1.13.3-alpine
+FROM node:16-alpine AS build
+WORKDIR /app
 
-## Copy our nginx config
-COPY nginx/ /etc/nginx/conf.d/
+COPY package*.json ./
 
-## Remove default nginx website
-RUN rm -rf /usr/share/nginx/html/*
 
-## copy over the artifacts in dist folder to default nginx public folder
-COPY dist/ /usr/share/nginx/html
+RUN npm install
 
-EXPOSE 8080
+COPY . .
 
-CMD ["nginx", "-g", "daemon off;"]
+RUN ng run build
+
+EXPOSE 4200
+
+CMD ["npm", "start"]
